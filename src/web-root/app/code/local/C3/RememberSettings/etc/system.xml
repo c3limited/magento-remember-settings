@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * C3 Media Ltd
+ *
+ * @title 		Remember Settings
+ * @category	C3
+ * @author		C3 Development Team <development@c3media.co.uk>
+ * @copyright   Copyright (c) 2015 C3 Media Ltd (http://www.c3media.co.uk)
+ */
+ -->
+
+<config>
+    <tabs>
+        <c3extensions translate="label">
+            <label>C3 Extensions</label>
+            <sort_order>900</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+        </c3extensions>
+    </tabs>
+    <sections>
+        <c3_remembersettings translate="label" module="c3_remembersettings">
+            <class>separator-top</class>
+            <label>Remember Grid Settings</label>
+            <tab>c3extensions</tab>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <sort_order>800</sort_order>
+            <groups>
+                <options translate="label">
+                    <label>Options</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>100</sort_order>
+                    <fields>
+                        <grid_keys translate="label,comment">
+                            <label>Grid keys to remember</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Information to store between sessions, stored against admin user</comment>
+                            <source_model>c3_remembersettings/system_config_source_gridkeys</source_model>
+                        </grid_keys>
+                    </fields>
+                </options>
+            </groups>
+        </c3_remembersettings>
+    </sections>
+</config>
