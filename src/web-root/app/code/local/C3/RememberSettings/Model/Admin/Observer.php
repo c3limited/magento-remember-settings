@@ -46,7 +46,11 @@ class C3_RememberSettings_Model_Admin_Observer
             return;
         $extra = $this->_getUserExtra($adminUser);
         // Clean down session_store of extra so that changes of what to store have an immediate effect
-        $oldStore = $extra['session_store'];
+        if (isset($extra['session_store'])) {
+            $oldStore = $extra['session_store'];
+        } else {
+            $oldStore = array();
+        }
         $extra['session_store'] = array();
 
         // Set any matched data from session to admin user extra
