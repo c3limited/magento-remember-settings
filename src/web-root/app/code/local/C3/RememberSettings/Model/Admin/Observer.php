@@ -45,30 +45,27 @@ class C3_RememberSettings_Model_Admin_Observer
         if ($adminUser === null)
             return;
         $extra = $this->_getUserExtra($adminUser);
-        // Clean down session_store of extra so that changes of what to store have an immediate effect
-        if (isset($extra['session_store'])) {
-            $oldStore = $extra['session_store'];
-        } else {
-            $oldStore = array();
-        }
-        $extra['session_store'] = array();
 
         // Set any matched data from session to admin user extra
         $changed = false;
         foreach ($session->getData() as $key => $data) {
             if ($this->_isSessionKeyStorable($key)) {
                 // If data exists in extra, only set if different. If data does not exist, always set
-                if ((isset($oldStore[$key]) && $oldStore[$key] !== $data) || !isset($oldStore[$key])) {
+                if ((isset($extra['session_store'][$key]) && $extra['session_store'][$key] !== $data) || !isset($extra['session_store'][$key])) {
                     $changed = true;
-                    // If value is blank, then do not add entry
-                    if ($data !== '') {
+                    // If value is blank, then remove the entry
+                    if ($data === '') {
+                        unset($extra['session_store'][$key]);
+                    } else {
                         $extra['session_store'][$key] = $data;
                     }
                 }
-            } else if (isset($oldStore[$key])) {
+            } else if (isset($extra['session_store'][$key])) {
                 // If we are not going to store this, but it was stored before, we need to save the user
+                unset($extra['session_store'][$key]);
                 $changed = true;
             }
+            // If neither match, then we are not storing the data and no value was stored, so ignore
         }
 
         // Save user on change
