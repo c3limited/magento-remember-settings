@@ -1,0 +1,102 @@
+<_>
+   <form_key>sNpcbJDQR31OCU00</form_key>
+   <name>C3_Remember_Admin_Grid_Settings</name>
+   <channel>community</channel>
+   <version_ids>
+      <version_ids>2</version_ids>
+   </version_ids>
+   <summary>Remembers last sort and filter preferences when displaying admin grids - saved to admin user between sessions</summary>
+   <description>&lt;h1&gt;Who this is for&lt;/h1&gt;
+&lt;p&gt;For any Magento admin who is tired of reordering grids how they want to see them every time they log in. Perhaps you always want to view orders filtered by status pending, or want to view CMS pages ordered by date.&lt;/p&gt;
+
+&lt;p&gt;Magento will remember your grid preferences for the current setting, but forgets them when you log out or when you log in on a different computer.&lt;/p&gt;
+
+&lt;p&gt;This extension saves these grid preferences against your admin user so that no matter when or where you login, these options will be set the same.&lt;/p&gt;
+
+&lt;h1&gt;Information&lt;/h1&gt;
+
+&lt;p&gt;The extension is &lt;a href=&quot;https://github.com/c3limited/magento-remember-settings&quot;&gt;Open source on GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Include via composer or modman&lt;/p&gt;
+&lt;p&gt;Oldest supported CE version is 1.6.0.0&lt;/p&gt;
+&lt;p&gt;Developed by C3 Media, a full service &lt;a href=&quot;http://www.c3media.co.uk&quot;&gt;Magento agency&lt;/a&gt;&lt;/p&gt;</description>
+   <license>GNU General Public License</license>
+   <license_uri/>
+   <version>1.0.0</version>
+   <stability>stable</stability>
+   <notes>&lt;ul&gt;
+&lt;li&gt;Stable release of extension&lt;/li&gt;
+&lt;/ul&gt;</notes>
+   <authors>
+      <name>
+         <name>C3 Media</name>
+      </name>
+      <user>
+         <user>c3media_ltd</user>
+      </user>
+      <email>
+         <email>hello@c3media.co.uk</email>
+      </email>
+   </authors>
+   <depends_php_min>5.2.0</depends_php_min>
+   <depends_php_max>6.0.0</depends_php_max>
+   <depends>
+      <package>
+         <name>
+            <name/>
+         </name>
+         <channel>
+            <channel/>
+         </channel>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+         <files>
+            <files>           </files>
+         </files>
+      </package>
+      <extension>
+         <name>
+            <name>Core</name>
+            <name>Core</name>
+         </name>
+         <min>
+            <min/>
+            <min/>
+         </min>
+         <max>
+            <max/>
+            <max/>
+         </max>
+      </extension>
+   </depends>
+   <contents>
+      <target>
+         <target>magelocal</target>
+         <target>mageetc</target>
+         <target>magelocal</target>
+      </target>
+      <path>
+         <path/>
+         <path>modules/C3_RememberSettings.xml</path>
+         <path>C3/RememberSettings</path>
+      </path>
+      <type>
+         <type>file</type>
+         <type>file</type>
+         <type>dir</type>
+      </type>
+      <include>
+         <include/>
+         <include/>
+         <include/>
+      </include>
+      <ignore>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+      </ignore>
+   </contents>
+</_>
